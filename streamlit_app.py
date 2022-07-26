@@ -8,7 +8,7 @@ import tensorflow as tf
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
-model = tf.keras.models.load_model("models\catsVSdogs.h5")
+model = tf.keras.models.load_model("models/catsVSdogs.h5")
 
 def main():
     st.title("Testing")
