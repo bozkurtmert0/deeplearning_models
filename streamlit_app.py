@@ -16,7 +16,7 @@ import _pickle as cPickle
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 movies = pickle.load(open('models/movie_list.pkl','rb'))
-archive = zipfile.ZipFile('models/similarity.zip', 'r')
+#archive = zipfile.ZipFile('models/similarity.zip', 'r')
 #similarity = archive.read("similarity.pkl")
 def decompress_pickle(file):
   data = bz2.BZ2File(file, "rb")
