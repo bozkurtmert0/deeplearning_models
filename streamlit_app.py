@@ -17,9 +17,16 @@ import pickle
 import _pickle as cPickle
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
+
+#------------------For Docker and Heroku ---------------------------------------
+from flask import Flask
+import os
+app = Flask(__name__)
+port = int(os.environ.get("PORT", 5000))
+
+#-----------------------------------------------------------------------------------
+
 movies = pickle.load(open('models/movie_list.pkl','rb'))
-archive = zipfile.ZipFile('models/similarity.zip', 'r')
-#similarity = archive.read("similarity.pkl")
 def decompress_pickle(file):
   data = bz2.BZ2File(file, "rb")
   data = cPickle.load(data)
@@ -50,7 +57,7 @@ def recommend(movie):
 
     return recommended_movie_names,recommended_movie_posters
 
-
+#-------------------------------------------------------------------------------------------------------------
 def main():
     st.title("Testing")
 
@@ -183,5 +190,6 @@ def main():
                 st.text(recommended_movie_names[4])
                 st.image(recommended_movie_posters[4])
 
-if __name__ == "__main__":
-    main()
+
+if __name__ == '__main__':
+    app.run(debug=True,host='0.0.0.0',port=port)
