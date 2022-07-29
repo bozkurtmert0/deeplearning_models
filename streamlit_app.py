@@ -1,5 +1,3 @@
-# importing libraries
-from turtle import pd
 import streamlit as st
 import cv2
 from PIL import Image
@@ -27,6 +25,11 @@ port = int(os.environ.get("PORT", 5000))
 #-----------------------------------------------------------------------------------
 
 movies = pickle.load(open('models/movie_list.pkl','rb'))
+<<<<<<< HEAD
+=======
+#archive = zipfile.ZipFile('models/similarity.zip', 'r')
+#similarity = archive.read("similarity.pkl")
+>>>>>>> 566b44b4ef7a70b9785d1003451a155432e16eea
 def decompress_pickle(file):
   data = bz2.BZ2File(file, "rb")
   data = cPickle.load(data)
@@ -190,6 +193,11 @@ def main():
                 st.text(recommended_movie_names[4])
                 st.image(recommended_movie_posters[4])
 
+<<<<<<< HEAD
 
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0',port=port)
+=======
+if __name__ == "__main__":
+    main()
+>>>>>>> 566b44b4ef7a70b9785d1003451a155432e16eea
