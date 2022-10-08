@@ -7,4 +7,4 @@
 
 [Disaster Tweets Notebook](https://github.com/bozkurtmert0/deep-learning-projects/blob/main/NLP__Disaster_Tweets.ipynb)
 
-[Streamlit Link](https://bozkurtmert0-deeplearning-models-streamlit-app-49xhqz.streamlitapp.com)
+[Hugging Face Spaces Link](https://huggingface.co/spaces/mertbozkurt/models)
